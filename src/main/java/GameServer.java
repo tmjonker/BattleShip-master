@@ -22,7 +22,7 @@ public class GameServer {
         gameHelper = gameGui.getGameHelper();
         gameHelper.setIsHost(true);
     }
-    
+
     private void runServer() {
         Thread connectThread = new Thread(new acceptConnections());
         connectThread.setDaemon(true);
