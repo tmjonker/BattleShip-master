@@ -8,8 +8,8 @@ My Version of the board game Battleship. Player connects to another player on th
 2. Clone this repository: git clone https://github.com/tmjonker/BattleShip
 3. Change into the directory of the project
 4. Change into the /src/ directory
-4. Use javac *.java to compile the source code
-5. To run the program: java GameGUI
+4. Maven is used as the build tool.  POM.xml is included.
+5. Use whichever IDE you prefer to compile and build the project.
 
 ## How to Play
 
@@ -33,7 +33,7 @@ My Version of the board game Battleship. Player connects to another player on th
         
 ## How to Test using 1 Computer
 
-* First, get your local ip (192.168.x.x) address by typing ipconfig in a cmd.exe prompt (Windows).
+* First, get your local ip address by typing ipconfig in a cmd.exe prompt (Windows).
     * Or use /sbin/ifconfig (Linux).
 * To test using one computer, open two different GameGUI windows by executing java GameGUI twice.
 * In one of the GameGUI windows, start a new game as a HOST.
@@ -44,7 +44,7 @@ My Version of the board game Battleship. Player connects to another player on th
 ## Built With
 
 * [JavaFX](https://docs.oracle.com/javase/8/javase-clienttechnologies.htm) - For GUI programming.
-* [Java 1.8](http://www.oracle.com/technetwork/java/javase/documentation/index.html) - Primary programming language.
+* [Java 8](http://www.oracle.com/technetwork/java/javase/documentation/index.html) - Primary programming language.
 
 
 ## Authors
