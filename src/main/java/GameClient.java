@@ -6,6 +6,9 @@ import java.net.*;
 
 /**
  * Created by tmjon on 7/29/2017.
+ *
+ * Contains the code that enables the user to connect to another client.
+ *
  */
 public class GameClient {
 

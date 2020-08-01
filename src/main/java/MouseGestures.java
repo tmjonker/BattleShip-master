@@ -5,6 +5,8 @@ import javafx.scene.shape.Rectangle;
 
 /**
  * Created by tmjon on 7/24/2017.
+ *
+ * This class controls the dragging of game pieces across the game board.
  */
 public class MouseGestures {
 

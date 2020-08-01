@@ -9,6 +9,8 @@ import java.util.ArrayList;
 
 /**
  * Created by tmjon on 7/27/2017.
+ *
+ * This class represents your game board that you set your pieces up on.
  */
 public class BottomGrid {
 

@@ -8,6 +8,8 @@ import javafx.scene.shape.Rectangle;
 
 /**
  * Created by tmjon on 7/27/2017.
+ *
+ * This is the class that represents your opponents game board.
  */
 public class TopGrid extends GridPane {
 
@@ -64,7 +66,8 @@ public class TopGrid extends GridPane {
                     Platform.runLater(new Runnable() {
                         @Override
                         public void run() {
-                            new ErrorBox("Pick another coordinate.", "Already been targeted.");
+                            new ErrorBox("Pick another coordinate.",
+                                    "Already been targeted.");
                         }
                     });
                 }

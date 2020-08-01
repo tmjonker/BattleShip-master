@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 /**
  * Created by tmjon on 7/27/2017.
+ *
+ * This class controls and handles the ship (game piece) creation, implementation, and maniuplation.
  */
 public class ShipManipulator  {
 

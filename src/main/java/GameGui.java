@@ -18,7 +18,11 @@ import javafx.stage.Stage;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
+ *
  * Created by tmjon on 7/19/2017.
+ *
+ * The main GUI code for the game.
+ *
  */
 public class GameGui {
 

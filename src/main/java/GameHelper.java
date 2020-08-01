@@ -5,6 +5,9 @@ import java.io.PrintWriter;
 
 /**
  * Created by tmjon on 7/31/2017.
+ *
+ * This class contains and controls a lot of the gameplay mechanics.
+ *
  */
 public class GameHelper {
 
