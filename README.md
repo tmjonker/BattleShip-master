@@ -1,4 +1,4 @@
-# Battleship - Java
+# Battleship
 
 My Version of the board game Battleship. Player connects to another player on their network to play a game of Battleship.  Does not work with public IP's.
 
