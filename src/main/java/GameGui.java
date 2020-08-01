@@ -385,10 +385,6 @@ public class GameGui {
         shipSelected = ship;
     }
 
-    private Rectangle getShipSelected() {
-        return shipSelected;
-    }
-
     public void selectiveDisableButtons() {
         if (Carrier.getHasBeenDropped()) {
             carrierButton.setDisable(true);
