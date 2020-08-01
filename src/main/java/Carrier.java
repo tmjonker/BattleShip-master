@@ -21,21 +21,6 @@ public class Carrier extends Rectangle {
         return newCarrier;
     }
 
-    public Rectangle create(double x, double y) {
-        Rectangle newCarrier = new Rectangle(x,
-                y, S_W, S_H);
-        newCarrier.setFill(Color.rgb(0, 200, 0, 0.5));
-        return newCarrier;
-    }
-
-    public double getStartingXPlacement() {
-        return startingXPlacement;
-    }
-
-    public double getStartingYPlacement() {
-        return startingYPlacement;
-    }
-
     public static void setHasBeenDropped(boolean tf) {
         hasBeenDropped = tf;
     }

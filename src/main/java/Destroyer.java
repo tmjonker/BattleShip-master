@@ -23,21 +23,6 @@ public class Destroyer extends Rectangle {
         return mold;
     }
 
-    public Rectangle create(double x, double y) {
-        Rectangle newDestroyer = new Rectangle(x,
-                y, S_W, S_H);
-        newDestroyer.setFill(Color.rgb(255, 100, 50, 0.5));
-        return newDestroyer;
-    }
-
-    public double getStartingXPlacement() {
-        return startingXPlacement;
-    }
-
-    public double getStartingYPlacement() {
-        return startingYPlacement;
-    }
-
     public static void setHasBeenDropped(boolean tf) {
         hasBeenDropped = tf;
     }

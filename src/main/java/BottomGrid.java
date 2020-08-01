@@ -22,11 +22,6 @@ public class BottomGrid {
     private final int[][][] shipLocations = new int[6][12][12];
     private final GameGui gameGui;
     private int[] lastTypeDropped;
-    private Rectangle submarine;
-    private Rectangle destroyer;
-    private Rectangle carrier;
-    private Rectangle battleship;
-    private Rectangle cruiser;
 
     public BottomGrid(ShipManipulator sm, MouseGestures mg, GameGui gameGui) {
         this.gameGui = gameGui;
@@ -88,7 +83,7 @@ public class BottomGrid {
             if (col + 5 > 12) {
                 new ErrorBox("Out of Bounds");
             } else {
-                add(carrier = shipManipulator.getCarrier(), col, row, 5, 1, 1);
+                add(shipManipulator.getCarrier(), col, row, 5, 1, 1);
                 Carrier.setHasBeenDropped(true);
                 gameGui.checkButtons();
             }

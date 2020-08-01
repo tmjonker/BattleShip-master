@@ -24,21 +24,6 @@ public class Cruiser extends Rectangle {
         return newCruiser;
     }
 
-    public Rectangle create(double x, double y) {
-        Rectangle newCruiser = new Rectangle(x,
-                y, S_W, S_H);
-        newCruiser.setFill(Color.rgb(255, 200, 0, 0.5));
-        return newCruiser;
-    }
-
-    public double getStartingXPlacement() {
-        return startingXPlacement;
-    }
-
-    public double getStartingYPlacement() {
-        return startingYPlacement;
-    }
-
     public static void setHasBeenDropped(boolean tf) {
         hasBeenDropped = tf;
     }

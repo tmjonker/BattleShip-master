@@ -61,25 +61,17 @@ public class GameServer {
                 gameGui.enableRollButton();
                 gameHelper.setOutputStream(new PrintWriter(socket.getOutputStream()));
                 gameHelper.setInputStream(new BufferedReader(new InputStreamReader(socket.getInputStream())));
-                Runtime.getRuntime().addShutdownHook(new Thread() {
+                Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+                    try {
+                        socket.close();
+                        serverSocket.close();
+                    } catch (IOException ex) {
 
-                    public void run() {
-                        try {
-                            socket.close();
-                            serverSocket.close();
-                        } catch (IOException ex) {
-
-                        }
                     }
-                });
+                }));
                 gameHelper.startListening();
             } catch (IOException ex) {
-                Platform.runLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        new ErrorBox("Connection Failed.");
-                    }
-                });
+                Platform.runLater(() -> new ErrorBox("Connection Failed."));
             }
         }
     }

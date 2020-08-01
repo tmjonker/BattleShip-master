@@ -32,7 +32,7 @@ public class MouseGestures {
         double y;
     }
 
-    private DragContext dragContextA = new DragContext();
+    private final DragContext dragContextA = new DragContext();
 
     public void selectShip(Node node) {
 
@@ -43,7 +43,7 @@ public class MouseGestures {
         shipSelected.setOnMouseReleased(onMouseReleasedEventHandlerA);
     }
 
-    private EventHandler<MouseEvent> onMousePressedEventHandlerA = event -> {
+    private final EventHandler<MouseEvent> onMousePressedEventHandlerA = event -> {
         if (event.getSource() instanceof Rectangle) {
                 if (shipManipulator.hasBeenDropped((Rectangle) event.getSource())) {
 
@@ -64,7 +64,7 @@ public class MouseGestures {
         event.consume();
     };
 
-    private EventHandler<MouseEvent> onMouseDragDetectedEventHandlerA = event -> {
+    private final EventHandler<MouseEvent> onMouseDragDetectedEventHandlerA = event -> {
 
         shipSelected.startFullDrag();
         shipSelected.setMouseTransparent(true);
@@ -72,7 +72,7 @@ public class MouseGestures {
         event.consume();
     };
 
-    private EventHandler<MouseEvent> onMouseDraggedEventHandlerA = event -> {
+    private final EventHandler<MouseEvent> onMouseDraggedEventHandlerA = event -> {
 
         if (event.getSource() instanceof Rectangle) {
 
@@ -84,7 +84,7 @@ public class MouseGestures {
         }
     };
 
-    private EventHandler<MouseEvent> onMouseReleasedEventHandlerA = event -> {
+    private final EventHandler<MouseEvent> onMouseReleasedEventHandlerA = event -> {
 
         try {
             bottomGrid.checkBoundsAndDropShip(realCol, realRow, shipSelected);

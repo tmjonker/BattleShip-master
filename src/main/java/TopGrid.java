@@ -19,10 +19,8 @@ public class TopGrid extends GridPane {
 
 
     public TopGrid (GameHelper gh) {
-
         gameHelper = gh;
     }
-
 
     public void drawGrid() {
 
@@ -63,13 +61,8 @@ public class TopGrid extends GridPane {
                     rowIndex = row;
                     gameHelper.sendCoordinates(col, row);
                 } else {
-                    Platform.runLater(new Runnable() {
-                        @Override
-                        public void run() {
-                            new ErrorBox("Pick another coordinate.",
-                                    "Already been targeted.");
-                        }
-                    });
+                    Platform.runLater(() -> new ErrorBox("Pick another coordinate.",
+                            "Already been targeted."));
                 }
             }
        }

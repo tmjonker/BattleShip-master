@@ -13,7 +13,7 @@ import javafx.stage.Stage;
  */
 public class ErrorBox {
 
-    private Stage stage;
+    private final Stage stage;
 
     public ErrorBox(String message, String title) {
 

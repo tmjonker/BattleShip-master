@@ -14,11 +14,9 @@ import javafx.stage.Stage;
 public class IpBox {
 
     private final Stage stage;
-    private final GameGui gameGui;
     private GameClient gameClient;
 
     public IpBox(double x, double y, GameGui gameGui) {
-        this.gameGui = gameGui;
         stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle("Enter IP Address");

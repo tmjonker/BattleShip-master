@@ -22,22 +22,6 @@ public class Battleship extends Rectangle{
         return newBattleship;
     }
 
-    public Rectangle create(double x, double y) {
-        Rectangle newBattleship = new Rectangle(x,
-                y, S_W, S_H);
-        newBattleship.setFill(Color.rgb(0, 200, 200, 0.5));
-
-        return newBattleship;
-    }
-
-    public double getStartingXPlacement() {
-        return startingXPlacement;
-    }
-
-    public double getStartingYPlacement() {
-        return startingYPlacement;
-    }
-
     public static void setHasBeenDropped(boolean tf) {
         hasBeenDropped = tf;
     }

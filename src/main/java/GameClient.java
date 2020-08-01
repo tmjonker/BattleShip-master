@@ -61,24 +61,18 @@ public class GameClient {
                 gameHelper.startListening();
                 gameGui.enableButtons();
                 gameGui.enableRollButton();
-                Runtime.getRuntime().addShutdownHook(new Thread() {
+                Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+                    try {
+                        socket.close();
+                    } catch (IOException ex) {
 
-                    public void run() {
-                        try {
-                            socket.close();
-                        } catch (IOException ex) {
-
-                        }
                     }
-                });
+                }));
 
             } catch (IOException ex) {
-                Platform.runLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        new ErrorBox("Connection Failed.");
-                        gameGui.disconnectMenuItemAction();
-                    }
+                Platform.runLater(() -> {
+                    new ErrorBox("Connection Failed.");
+                    gameGui.disconnectMenuItemAction();
                 });
             }
         }

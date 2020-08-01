@@ -139,40 +139,15 @@ public class GameGui {
         rollButton = new Button("Roll");
 
 
-        rotateButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                rotateButtonAction();
-            }
-        });
+        rotateButton.setOnMouseClicked(event -> rotateButtonAction());
 
-        clearLastButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                clearLastButtonAction();
-            }
-        });
+        clearLastButton.setOnMouseClicked(event -> clearLastButtonAction());
 
-        clearAllButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                clearAllButtonAction();
-            }
-        });
+        clearAllButton.setOnMouseClicked(event -> clearAllButtonAction());
 
-        finalizeButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                finalizeButtonAction();
-            }
-        });
+        finalizeButton.setOnMouseClicked(event -> finalizeButtonAction());
 
-        rollButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                rollButtonAction();
-            }
-        });
+        rollButton.setOnMouseClicked(event -> rollButtonAction());
 
         disableButtons();
         disableMenuItem(currentGame);
@@ -335,22 +310,16 @@ public class GameGui {
     }
 
     public void setP1Turn() {
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                p1Turn.setText("My Turn");
-                p2Turn.setText("");
-            }
+        Platform.runLater(() -> {
+            p1Turn.setText("My Turn");
+            p2Turn.setText("");
         });
     }
 
     public void setP2Turn() {
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                p2Turn.setText("Their Turn");
-                p1Turn.setText("");
-            }
+        Platform.runLater(() -> {
+            p2Turn.setText("Their Turn");
+            p1Turn.setText("");
         });
     }
 
@@ -377,12 +346,7 @@ public class GameGui {
     }
 
     public void setStageTitle(String title) {
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                stage.setTitle("Battleship " + "- " + title);
-            }
-        });
+        Platform.runLater(() -> stage.setTitle("Battleship " + "- " + title));
     }
 
     private void setP1Ready(boolean ready) {
@@ -396,7 +360,7 @@ public class GameGui {
     }
 
     private void setRoll1(int roll) {
-        roll1.setText("My Roll: " + Integer.toString(roll));
+        roll1.setText("My Roll: " + roll);
     }
 
     private void resetRolls() {
@@ -405,7 +369,7 @@ public class GameGui {
     }
 
     public void setRoll2(int roll) {
-        roll2.setText("Their Roll: " + Integer.toString(roll));
+        roll2.setText("Their Roll: " + roll);
     }
 
     public void placeShip(Rectangle ship) {

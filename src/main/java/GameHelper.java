@@ -53,40 +53,37 @@ public class GameHelper {
     }
 
     private void checkForSinkP1(int type) {
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
+        Platform.runLater(() -> {
 
-                if (type == 1) {
-                    if (typeCounter[type] == 5) {
-                        new ErrorBox("They sank your Carrier!", "Your Carrier Sank");
-                        outputStream.println("sank/1");
-                        outputStream.flush();
-                    }
-                } else if (type == 2) {
-                    if (typeCounter[type] == 4) {
-                        new ErrorBox("They sank your Battleship!", "Your Battleship Sank");
-                        outputStream.println("sank/2");
-                        outputStream.flush();
-                    }
-                } else if (type == 3) {
-                    if (typeCounter[type] == 3) {
-                        new ErrorBox("They sank your Cruiser!", "Your Cruiser Sank");
-                        outputStream.println("sank/3");
-                        outputStream.flush();
-                    }
-                } else if (type == 4) {
-                    if (typeCounter[type] == 3) {
-                        new ErrorBox("They sank your Submarine!", "Your Submarine Sank");
-                        outputStream.println("sank/4");
-                        outputStream.flush();
-                    }
-                } else if (type == 5) {
-                    if (typeCounter[type] == 2) {
-                        new ErrorBox("They sank your Destroyer!", "Your Destroyer Sank");
-                        outputStream.println("sank/5");
-                        outputStream.flush();
-                    }
+            if (type == 1) {
+                if (typeCounter[type] == 5) {
+                    new ErrorBox("They sank your Carrier!", "Your Carrier Sank");
+                    outputStream.println("sank/1");
+                    outputStream.flush();
+                }
+            } else if (type == 2) {
+                if (typeCounter[type] == 4) {
+                    new ErrorBox("They sank your Battleship!", "Your Battleship Sank");
+                    outputStream.println("sank/2");
+                    outputStream.flush();
+                }
+            } else if (type == 3) {
+                if (typeCounter[type] == 3) {
+                    new ErrorBox("They sank your Cruiser!", "Your Cruiser Sank");
+                    outputStream.println("sank/3");
+                    outputStream.flush();
+                }
+            } else if (type == 4) {
+                if (typeCounter[type] == 3) {
+                    new ErrorBox("They sank your Submarine!", "Your Submarine Sank");
+                    outputStream.println("sank/4");
+                    outputStream.flush();
+                }
+            } else if (type == 5) {
+                if (typeCounter[type] == 2) {
+                    new ErrorBox("They sank your Destroyer!", "Your Destroyer Sank");
+                    outputStream.println("sank/5");
+                    outputStream.flush();
                 }
             }
         });
@@ -94,27 +91,24 @@ public class GameHelper {
 
     private void checkForSinkP2(String data){
         String[] splitter = data.split("/");
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
+        Platform.runLater(() -> {
 
-                switch (Integer.parseInt(splitter[1])) {
-                    case 1:
-                        new ErrorBox("You sank their Carrier!", "Their Carrier Sank!");
-                        break;
-                    case 2:
-                        new ErrorBox("You sank their Battleship!", "Their Battleship Sank!");
-                        break;
-                    case 3:
-                        new ErrorBox("You sank their Cruiser!", "Their Cruiser Sank!");
-                        break;
-                    case 4:
-                        new ErrorBox("You sank their Submarine!", "Their Submarine Sank!");
-                        break;
-                    case 5:
-                        new ErrorBox("You sank their Destroyer!", "Their Destroyer Sank!");
-                        break;
-                }
+            switch (Integer.parseInt(splitter[1])) {
+                case 1:
+                    new ErrorBox("You sank their Carrier!", "Their Carrier Sank!");
+                    break;
+                case 2:
+                    new ErrorBox("You sank their Battleship!", "Their Battleship Sank!");
+                    break;
+                case 3:
+                    new ErrorBox("You sank their Cruiser!", "Their Cruiser Sank!");
+                    break;
+                case 4:
+                    new ErrorBox("You sank their Submarine!", "Their Submarine Sank!");
+                    break;
+                case 5:
+                    new ErrorBox("You sank their Destroyer!", "Their Destroyer Sank!");
+                    break;
             }
         });
     }
@@ -152,12 +146,7 @@ public class GameHelper {
         outputStream.println("over");
         outputStream.flush();
 
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                new ErrorBox("You Lose!", "You have lost this game!");
-            }
-        });
+        Platform.runLater(() -> new ErrorBox("You Lose!", "You have lost this game!"));
         disconnectSocket();
         newGameSetup();
     }
@@ -172,12 +161,7 @@ public class GameHelper {
     }
 
     private void gameOverP2() {
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                new ErrorBox("You Win!", "You have won this game!");
-            }
-        });
+        Platform.runLater(() -> new ErrorBox("You Win!", "You have won this game!"));
         disconnectSocket();
         newGameSetup();
     }
@@ -220,12 +204,7 @@ public class GameHelper {
 
     private void setpTwoReady() {
         pTwoReady = true;
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                gameGui.setP2Ready(true);
-            }
-        });
+        Platform.runLater(() -> gameGui.setP2Ready(true));
     }
 
     public void sendReady() {
@@ -251,36 +230,28 @@ public class GameHelper {
         String[] splitter = roll.split("/");
         pTwoRolled = true;
         pTwoRoll = Integer.parseInt(splitter[1]);
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                gameGui.setRoll2(pTwoRoll);
-            }
-        });
+        Platform.runLater(() -> gameGui.setRoll2(pTwoRoll));
         compareRolls();
     }
 
     private void compareRolls() {
         if (getBothRolled()) {
-            Platform.runLater(new Runnable() {
-                @Override
-                public void run() {
-                    if (pOneRoll > pTwoRoll) {
-                        setMyTurn(true);
-                        gameGui.setP1Turn();
-                        new ErrorBox("You have first move.", "You " + pOneRoll +
-                                " : " + "Opponent " + pTwoRoll);
-                    } else if (pOneRoll == pTwoRoll) {
-                        pOneRolled = false;
-                        pTwoRolled = false;
-                        new ErrorBox("Please roll again.");
-                        gameGui.enableRollButton();
-                    } else {
-                        setMyTurn(false);
-                        gameGui.setP2Turn();
-                        new ErrorBox("Your opponent has first move.", "You " +
-                                pOneRoll + " : " + "Opponent " + pTwoRoll);
-                    }
+            Platform.runLater(() -> {
+                if (pOneRoll > pTwoRoll) {
+                    setMyTurn(true);
+                    gameGui.setP1Turn();
+                    new ErrorBox("You have first move.", "You " + pOneRoll +
+                            " : " + "Opponent " + pTwoRoll);
+                } else if (pOneRoll == pTwoRoll) {
+                    pOneRolled = false;
+                    pTwoRolled = false;
+                    new ErrorBox("Please roll again.");
+                    gameGui.enableRollButton();
+                } else {
+                    setMyTurn(false);
+                    gameGui.setP2Turn();
+                    new ErrorBox("Your opponent has first move.", "You " +
+                            pOneRoll + " : " + "Opponent " + pTwoRoll);
                 }
             });
         }
