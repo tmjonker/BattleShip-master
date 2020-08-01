@@ -8,7 +8,6 @@ import javafx.scene.shape.Rectangle;
  */
 public class Cruiser extends Rectangle {
 
-
     private final static int S_W = 92;
     private final static int S_H = 30;
     private double startingXPlacement;
@@ -32,7 +31,7 @@ public class Cruiser extends Rectangle {
         return hasBeenDropped;
     }
 
-    public static Rectangle rotateShip(Rectangle ship) {
+    public static void rotateShip(Rectangle ship) {
         if (!hasBeenDropped) {
             if (isHorizontal) {
                 ship.setWidth(S_H);
@@ -46,8 +45,6 @@ public class Cruiser extends Rectangle {
         } else {
             new ErrorBox("Cannot rotate after dropped.");
         }
-
-        return ship;
     }
 
     public static boolean getIsHorizontal() {

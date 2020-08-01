@@ -9,7 +9,6 @@ import javafx.scene.shape.Rectangle;
  */
 public class Submarine extends Rectangle {
 
-
     private final static int S_W = 92;
     private final static int S_H = 30;
     private double startingXPlacement;
@@ -34,7 +33,7 @@ public class Submarine extends Rectangle {
         return hasBeenDropped;
     }
 
-    public static Rectangle rotateShip(Rectangle ship) {
+    public static void rotateShip(Rectangle ship) {
         if (!hasBeenDropped) {
             if (isHorizontal) {
                 ship.setWidth(S_H);
@@ -48,8 +47,6 @@ public class Submarine extends Rectangle {
         } else {
             new ErrorBox("Cannot rotate after dropped.");
         }
-
-        return ship;
     }
 
     public static boolean getIsHorizontal() {

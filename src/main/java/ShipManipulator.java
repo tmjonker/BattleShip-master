@@ -9,13 +9,12 @@ import java.util.ArrayList;
  */
 public class ShipManipulator  {
 
-    private ArrayList<Rectangle> shipList = new ArrayList<>();
     private Rectangle carrier;
     private Rectangle battleship;
     private Rectangle cruiser;
     private Rectangle submarine;
     private Rectangle destroyer;
-    private GameGui gameGui;
+    private final GameGui gameGui;
 
     public ShipManipulator(GameGui gameGui) {
         this.gameGui = gameGui;

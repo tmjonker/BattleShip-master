@@ -13,9 +13,9 @@ import javafx.scene.shape.Rectangle;
  */
 public class TopGrid extends GridPane {
 
-    private Rectangle[][] grid1 = new Rectangle[12][12];
-    private GridPane topGrid = new GridPane();
-    private GameHelper gameHelper;
+    private final Rectangle[][] grid1 = new Rectangle[12][12];
+    private final GridPane topGrid = new GridPane();
+    private final GameHelper gameHelper;
 
 
     public TopGrid (GameHelper gh) {

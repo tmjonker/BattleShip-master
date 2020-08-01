@@ -14,7 +14,7 @@ import java.net.*;
  */
 public class GameServer {
 
-    private GameHelper gameHelper;
+    private final GameHelper gameHelper;
     private static ServerSocket serverSocket;
     private static Socket socket;
     GameGui gameGui;
@@ -66,7 +66,7 @@ public class GameServer {
                         socket.close();
                         serverSocket.close();
                     } catch (IOException ex) {
-
+                        ex.printStackTrace();
                     }
                 }));
                 gameHelper.startListening();

@@ -13,8 +13,8 @@ import java.net.*;
 public class GameClient {
 
     private Socket socket;
-    private GameHelper gameHelper;
-    private GameGui gameGui;
+    private final GameHelper gameHelper;
+    private final GameGui gameGui;
 
     public GameClient(String ip, GameGui gameGui) {
         this.gameGui = gameGui;
@@ -37,7 +37,7 @@ public class GameClient {
             socket.close();
             System.out.println("Client Connection Closed");
         } catch (IOException ex) {
-
+            ex.printStackTrace();
         }
     }
 
@@ -65,7 +65,7 @@ public class GameClient {
                     try {
                         socket.close();
                     } catch (IOException ex) {
-
+                        ex.printStackTrace();
                     }
                 }));
 

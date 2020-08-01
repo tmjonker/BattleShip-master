@@ -29,7 +29,7 @@ public class Carrier extends Rectangle {
         return hasBeenDropped;
     }
 
-    public static Rectangle rotateShip(Rectangle ship) {
+    public static void rotateShip(Rectangle ship) {
         if (!hasBeenDropped) {
             if (isHorizontal) {
                 ship.setWidth(S_H);
@@ -43,7 +43,6 @@ public class Carrier extends Rectangle {
         } else {
             new ErrorBox("Cannot rotate after dropped.");
         }
-        return ship;
     }
 
     public static boolean getIsHorizontal() {

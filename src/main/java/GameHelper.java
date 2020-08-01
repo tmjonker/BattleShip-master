@@ -28,8 +28,8 @@ public class GameHelper {
     private boolean isHost;
     private volatile boolean shutdown = false;
     private final GameGui gameGui;
-    private GameClient gameClient;
-    private GameServer gameServer;
+    private final GameClient gameClient;
+    private final GameServer gameServer;
 
 
     public GameHelper(BottomGrid bg, GameGui gameGui, GameClient gameClient, GameServer gameServer) {
@@ -45,11 +45,7 @@ public class GameHelper {
     }
 
     public boolean getBothReady() {
-        if (pOneReady && pTwoReady) {
-            return true;
-        } else {
-            return false;
-        }
+        return pOneReady && pTwoReady;
     }
 
     private void checkForSinkP1(int type) {
@@ -125,7 +121,7 @@ public class GameHelper {
                 inputStream.close();
                 outputStream.close();
             } catch (IOException ex) {
-
+                ex.printStackTrace();
             }
         }
 
@@ -171,16 +167,11 @@ public class GameHelper {
     }
 
     private boolean getBothRolled() {
-        if (pOneRolled && pTwoRolled) {
-            return true;
-        } else {
-            return false;
-        }
+        return pOneRolled && pTwoRolled;
     }
 
     public boolean getP1Rolled() {
-        if (pOneRolled) return true;
-        else return false;
+        return pOneRolled;
     }
 
     public void setIsHost(boolean tf) {
@@ -335,16 +326,13 @@ public class GameHelper {
                     }
                 }
                 if (inputStream.readLine() == null) {
-                    Platform.runLater(new Runnable() {
-                        @Override
-                        public void run() {
-                            new ErrorBox("Opponent Has Disconnected", "Opponent has Disconnected");
-                            gameGui.disconnectMenuItemAction();
-                        }
+                    Platform.runLater(() -> {
+                        new ErrorBox("Opponent Has Disconnected", "Opponent has Disconnected");
+                        gameGui.disconnectMenuItemAction();
                     });
                 }
             } catch (IOException ex) {
-
+                ex.printStackTrace();
             }
         }
     }

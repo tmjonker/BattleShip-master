@@ -31,7 +31,7 @@ public class Destroyer extends Rectangle {
         return hasBeenDropped;
     }
 
-    public static Rectangle rotateShip(Rectangle ship) {
+    public static void rotateShip(Rectangle ship) {
 
         if (!hasBeenDropped) {
             if (isHorizontal) {
@@ -46,8 +46,6 @@ public class Destroyer extends Rectangle {
         } else {
             new ErrorBox("Cannot rotate after dropped.");
         }
-
-        return ship;
     }
 
     public static boolean getIsHorizontal() {
