@@ -1,3 +1,4 @@
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -35,6 +36,7 @@ public class ErrorBox {
         VBox buttonBox = new VBox(20);
         buttonBox.getChildren().addAll(messageBox, okButton);
         buttonBox.setAlignment(Pos.CENTER);
+        buttonBox.setPadding(new Insets(10,10,10,10));
 
         Scene setScene = new Scene(buttonBox);
         stage.setScene(setScene);

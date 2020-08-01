@@ -1,3 +1,4 @@
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -60,6 +61,7 @@ public class IpBox {
         VBox mainBox = new VBox(20);
         mainBox.getChildren().addAll(mainText, ipBox, buttonBox);
         mainBox.setAlignment(Pos.CENTER);
+        mainBox.setPadding(new Insets(10,10,10,10));
 
         Scene setScene = new Scene(mainBox);
         stage.setScene(setScene);
