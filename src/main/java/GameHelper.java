@@ -1,4 +1,6 @@
 import javafx.application.Platform;
+import javafx.stage.Stage;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -327,8 +329,8 @@ public class GameHelper {
                 }
                 if (inputStream.readLine() == null) {
                     Platform.runLater(() -> {
+                        new GameGui().drawGui(new Stage());
                         new ErrorBox("Opponent Has Disconnected", "Opponent has Disconnected");
-                        gameGui.disconnectMenuItemAction();
                     });
                 }
             } catch (IOException ex) {

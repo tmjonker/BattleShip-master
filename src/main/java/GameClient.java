@@ -1,5 +1,6 @@
 import javafx.application.Platform;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.*;
@@ -71,8 +72,8 @@ public class GameClient {
 
             } catch (IOException ex) {
                 Platform.runLater(() -> {
+                    new GameGui().drawGui(new Stage());
                     new ErrorBox("Connection Failed.");
-                    gameGui.disconnectMenuItemAction();
                 });
             }
         }

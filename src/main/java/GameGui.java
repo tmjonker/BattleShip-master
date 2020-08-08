@@ -488,4 +488,9 @@ public class GameGui {
     public GameHelper getGameHelper() {
         return gameHelper;
     }
+
+    public GameGui getGameGui() {
+
+        return this;
+    }
 }
