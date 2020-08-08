@@ -1,6 +1,12 @@
 # Battleship
 
-My Version of the board game Battleship. Player connects to another player on their network to play a game of Battleship.  Does not work with public IP's.  I will admit, this is extremely messy code.  It was my first real project and I learned a lot while doing it, but it is very difficult to read.  I've actually cleaned it up quite a bit since I first made it, but it's still extremely difficult to follow.
+My Version of the board game Battleship. Player connects to another player on their network to play a game of Battleship.  Does not work with public IP's. The ships are represented by colored rectangles. 
+
+I will admit, this is extremely messy code.  It was my first real project and I learned a lot while doing it, but it is very difficult to read.  I've actually cleaned it up quite a bit since I first made it, but it's still extremely difficult to follow.
+
+![Battleship](https://github.com/tmjonker/BattleShip-master/blob/master/Images/GameBoard.PNG)
+![Battleship](https://github.com/tmjonker/BattleShip-master/blob/master/Images/SettingUpPieces.PNG)
+![Battleship](https://github.com/tmjonker/BattleShip-master/blob/master/Images/GAMEPLAY.PNG)
 
 ## Getting Started
 
